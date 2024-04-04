@@ -1,0 +1,14 @@
+/* .header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Tenada';
+    src: url('/week1/assign2/font/Tenada.ttf');
+}
