@@ -1,73 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="todo.css" />
     <title>Jieun's Today Todo List</title>
-</head>
-<body class="font-['Tenada'] bg-gradient-to-r from-indigo-200 via-purple-200 to-blue-400">
-    <header class="my-12 flex justify-center items-center flex-col">
-        <h1 class="text-2xl">Jieun's Today Todo List</h1>
-        <div class="m-4 flex">
-            <input class="bg-pink-100 px-2 py-2 rounded-3xl" type="text" placeholder="할 일을 입력하세요."/>
-            <button>
-                <img class="w-5 mx-4" src="/week1/assign2/img/add.png" alt="add"/>
-            </button>
-        </div>
+  </head>
+  <body
+    class="bg-gradient-to-r from-indigo-200 via-purple-200 to-blue-400 font-['Tenada']"
+  >
+    <header class="my-12 flex flex-col items-center justify-center">
+      <h1 class="text-2xl">Jieun's Today Todo List</h1>
+      <div class="m-4 flex">
+        <input
+          class="rounded-3xl bg-pink-100 px-2 py-2"
+          type="text"
+          placeholder="할 일을 입력하세요."
+        />
+        <button>
+          <img class="mx-4 w-5" src="/week1/assign2/img/add.png" alt="add" />
+        </button>
+      </div>
     </header>
     <main class="flex justify-center">
-        <!-- 해야하는 일 -->
-        <section class="flex flex-col">
-            <h3 class="m-4 flex items-center justify-center text-sky-800">To Do</h3>
-            <ul class="m-2 flex flex-col">
-                <li class="w-80 animate-bounce   bg-blue-50 p-2 m-2 flex justify-between items-center rounded-lg">
-                    <span class="truncate ...">
-                        기후 동행카드 충전하기
-                    </span>
-                     <button>
-                        <img class="w-10" src="/week1/assign2/img/delete.png" alt="delete"/>
-                    </button>
-                </li>
-                <li class="flex w-80 animate-bounce   bg-blue-50 p-2 m-2 items-center rounded-lg">
-                    <span class=" truncate ...">
-                    캡스톤 프론트 UI 디자인하기. 3페이지는 만들기. 테마 색상 정하기
-                    </span> 
-                    <button >
-                        <img class="w-10" src="/week1/assign2/img/delete.png" alt="delete"/>
-                    </button>
-                </li>
-                <li class="w-80 animate-bounce   bg-blue-50 p-2 m-2 flex justify-between items-center rounded-lg">
-                    <span class="truncate ...">
-                    SOPT 1주차 과제하기
-                    </span>
-                <button>
-                    <img class="w-10" src="/week1/assign2/img/delete.png" alt="delete"/>
-                </button>
-            
-                </li>
-            </ul>
-        </section>
+      <!-- 해야하는 일 -->
+      <section class="flex flex-col">
+        <h3 class="m-4 flex items-center justify-center text-sky-800">To Do</h3>
+        <ul class="m-2 flex flex-col">
+          <li
+            class="m-2 flex w-80 animate-bounce items-center justify-between rounded-lg bg-blue-50 p-2"
+          >
+            <span class="... truncate"> 기후 동행카드 충전하기 </span>
+            <button>
+              <img
+                class="w-10"
+                src="/week1/assign2/img/delete.png"
+                alt="delete"
+              />
+            </button>
+          </li>
+          <li
+            class="m-2 flex w-80 animate-bounce items-center rounded-lg bg-blue-50 p-2"
+          >
+            <span class="... truncate">
+              캡스톤 프론트 UI 디자인하기. 3페이지는 만들기. 테마 색상 정하기
+            </span>
+            <button>
+              <img
+                class="w-10"
+                src="/week1/assign2/img/delete.png"
+                alt="delete"
+              />
+            </button>
+          </li>
+          <li
+            class="m-2 flex w-80 animate-bounce items-center justify-between rounded-lg bg-blue-50 p-2"
+          >
+            <span class="... truncate"> SOPT 1주차 과제하기 </span>
+            <button>
+              <img
+                class="w-10"
+                src="/week1/assign2/img/delete.png"
+                alt="delete"
+              />
+            </button>
+          </li>
+        </ul>
+      </section>
 
-        <!-- 완료 -->
-        <section class="flex flex-col" >
-            <h3 class="m-4 flex items-center justify-center text-sky-800">Done</h3>
-            <ul class="mx-4">
-                <li class="w-80 animate-bounce   bg-blue-50 p-2 m-2 flex justify-between items-center rounded-lg">
-                    <span class="truncate ...">친구 생일 축하해주기</span>
-                    <button>
-                        <img class="w-10" src="/week1/assign2/img/delete.png" alt="delete"/>
-                    </button>
-                </li>
-                <li class="w-80 animate-bounce   bg-blue-50 p-2 m-2 flex justify-between items-center rounded-lg">
-                    <span class="truncate ...">버디버디 한강 번개 정산하기 (교촌, 뿌링클, 엽떡, 돗자리 등등)</span>
-                    <button>
-                        <img class="w-10" src="/week1/assign2/img/delete.png" alt="delete"/>
-                    </button>
-                </li>
-            </ul>
-        </section>
+      <!-- 완료 -->
+      <section class="flex flex-col">
+        <h3 class="m-4 flex items-center justify-center text-sky-800">Done</h3>
+        <ul class="mx-4">
+          <li
+            class="m-2 flex w-80 animate-bounce items-center justify-between rounded-lg bg-blue-50 p-2"
+          >
+            <span class="... truncate">친구 생일 축하해주기</span>
+            <button>
+              <img
+                class="w-10"
+                src="/week1/assign2/img/delete.png"
+                alt="delete"
+              />
+            </button>
+          </li>
+          <li
+            class="m-2 flex w-80 animate-bounce items-center justify-between rounded-lg bg-blue-50 p-2"
+          >
+            <span class="... truncate"
+              >버디버디 한강 번개 정산하기 (교촌, 뿌링클, 엽떡, 돗자리
+              등등)</span
+            >
+            <button>
+              <img
+                class="w-10"
+                src="/week1/assign2/img/delete.png"
+                alt="delete"
+              />
+            </button>
+          </li>
+        </ul>
+      </section>
     </main>
-</body>
+  </body>
 </html>
