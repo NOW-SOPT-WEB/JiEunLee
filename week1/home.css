@@ -9,12 +9,19 @@ h1{
 h3{
     color: orange;
 }
-header img{
-    width: 7vw;
+#header_logo{
+    width: 5vw;
+    height: 7vh;
 }
+#header_hamburger{
+    width: 5vw;
+    height: 7vh;
+}
+
 .page_header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
     width: 100%;
