@@ -200,9 +200,13 @@ button {
 }
 
 /* week2 */
-.categoryContainer {
-  background-color: aqua;
+.item_img {
+  /* background-color: aqua; */
 }
-.imgElement {
-  background-color: blueviolet;
+.item_title {
+  /* background-color: blueviolet; */
+}
+.item_container {
+  background-color: orange;
+  margin: 5px;
 }

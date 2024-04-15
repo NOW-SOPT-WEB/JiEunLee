@@ -22,9 +22,9 @@ WishList.forEach((item) => {
   itemTitle.innerText = title;
 
   const itemPrice = document.createElement("p");
-  itemPrice.innerText = price + "WON";
+  itemPrice.innerText = price;
 
-  container.append(itemImg, likeBtn, itemTitle, itemPrice);
+  container.append(itemImg, itemTitle, itemPrice, likeBtn);
   category_article.appendChild(container);
 
   // 배너
@@ -64,13 +64,44 @@ function NavClick(category_name) {
     itemTitle.innerText = title;
 
     const itemPrice = document.createElement("p");
-    itemPrice.innerText = price + "WON";
+    itemPrice.innerText = price;
 
-    container.append(itemImg, likeBtn, itemTitle, itemPrice);
+    container.append(itemImg, itemTitle, itemPrice, likeBtn);
     category_article.appendChild(container);
   });
 }
 nav_li.forEach((item) => {
   const nav_name = item.innerText;
   item.addEventListener("click", () => NavClick(nav_name));
+});
+
+// 장바구니에 추가
+const item = document.querySelectorAll(".item_container");
+
+function handleAddCart(e, category, imgSrc, title) {
+  const answer = confirm("선물바구니에 담을까요?");
+
+  if (answer == false) {
+    return;
+  } else {
+    location.href = "/week2/assign/cart.html";
+  }
+  const [img, likeBtn, price] = e.currentTarget.children;
+  const cartList = JSON.parse(localStorage.getItem("cartList")) ?? [];
+
+  cartList.push({
+    id: Date.now(),
+    title,
+    price: price.innerText,
+    category,
+    imgSrc,
+  });
+
+  localStorage.setItem("cartList", JSON.stringify(cartList));
+}
+item.forEach((each) => {
+  const category = each.classList[1];
+  const img = each.children[0].getAttribute("src");
+  const title = each.children[0].getAttribute("alt");
+  each.addEventListener("click", (e) => handleAddCart(e, category, img, title));
 });
