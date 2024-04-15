@@ -32,7 +32,7 @@
 }
 
 /* 배너 */
-@keyframes roll {
+@keyframes animation {
   0% {
     transform: translateX(0);
   }
@@ -40,24 +40,32 @@
     transform: translateX(-100%);
   }
 }
+.slide {
+  position: absolute;
+  top: 100px;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  animation: 30s linear 0s infinite normal forwards running animation;
+}
+.item_img {
+  width: 180px;
+  height: 200px;
+}
 
 .banner {
   display: flex;
-  margin: 0 1vw 0 12vw;
+  width: 90%;
+  margin: 30vh 1vw 0 12vw;
   overflow: hidden;
 }
-.banner > ul {
-  margin: 15vh 0 0 0;
-  padding: 0;
-}
-.banner img {
+
+.banner_img {
+  display: flex;
   width: 15vw;
   height: 25vh;
 }
-.item_list {
-  display: flex;
-  animation: roll 10s linear infinite;
-}
+
 /* 네비게이션 */
 .category_nav {
   margin: 20vh 0 0 0;
@@ -189,4 +197,12 @@
 /* 버튼 클릭시 */
 button {
   cursor: pointer;
+}
+
+/* week2 */
+.categoryContainer {
+  background-color: aqua;
+}
+.imgElement {
+  background-color: blueviolet;
 }

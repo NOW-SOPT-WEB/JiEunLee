@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const imgElement = document.createElement("img");
     imgElement.src = item.imgSrc;
     imgElement.alt = item.title;
+    imgElement.classList.add("img_element");
+    imgElement.setAttribute("data-id", item.id); // 상품 id를 data-id 속성으로 추가
 
     const titleElement = document.createElement("h4");
     titleElement.textContent = item.title;
@@ -25,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const likebtnElement = document.createElement("button");
     likebtnElement.textContent = "❤️";
 
-    const priceElement = document.createElement("price");
+    const priceElement = document.createElement("p");
     priceElement.textContent = item.price + "won";
 
     categoryContainer.appendChild(imgElement);
@@ -81,6 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const imgElement = document.createElement("img");
     imgElement.src = item.imgSrc;
     imgElement.alt = item.title;
+    imgElement.classList.add("img_element");
+    imgElement.setAttribute("data-id", item.id);
 
     const titleElement = document.createElement("h4");
     titleElement.textContent = item.title;

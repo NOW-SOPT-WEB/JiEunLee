@@ -1,87 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta h4="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta h4="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="home.css" />
     <title>지은이 위시리스트</title>
-    <script src="/week1/home.js" type="module"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header class="page_header">
-        <button class="header_logo-btn">
-            <img id="header_logo" src="/week1/img/present_logo.png"  />
-        </button>
-        <h1>지은이 위시리스트</h1>
-        <img id="header_hamburger" src="/week1/img/hamburger_icon.png">
+      <button class="header_logo-btn">
+        <img id="header_logo" src="/week1/img/present_logo.png" />
+      </button>
+      <h1>지은이 위시리스트</h1>
+      <img id="header_hamburger" src="/week1/img/hamburger_icon.png" />
     </header>
 
-    <main>
-        <!-- 배너 -->
-        <div class="banner">
-            <ul class="item_list">
-                <li class="item">
-                    <img src="/week1/img/dessert/eggtart.jpeg" alt="에그타르트"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/dessert/strawberrycake.jpeg" alt="딸기생크림케이크"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/dessert/yogurt.jpeg"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/paper/oliveyoung.jpeg" alt="올리브영"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/paper/baemin.png" alt="배민상품권1만원""/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/paper/oliveyoung.jpeg" alt="올리브영2만원권""/>
-                </li>
-            </ul>
+    <!-- 배너 -->
+    <div class="banner">
+      <div class="slide"></div>
+    </div>
 
-            <ul class="item_list">
-                <li class="item">
-                    <img src="/week1/img/dessert/eggtart.jpeg" alt="에그타르트"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/dessert/strawberrycake.jpeg" alt="딸기생크림케이크"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/dessert/yogurt.jpeg"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/paper/oliveyoung.jpeg" alt="올리브영"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/paper/baemin.png" alt="배민상품권1만원""/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/paper/oliveyoung.jpeg" alt="올리브영2만원권""/>
-                </li>
-            </ul>
-        </div>
-        <nav class="category_nav">
-            <ol>
-                <li>전체</li>
-                <li>디저트</li>
-                <li>상품권</li>
-                <li>생필품</li>
-            </ol>
-        </nav>
-        <!-- 전체 카테고리 -->
-        <section id="all" class="category_section">
-            <header>
-                <h3 class="section_title">전체</h3>
-            </header>
-            <article class="category_article">
-                
-            </article>
-            
-        </section>
+    <nav class="category_nav">
+      <ol>
+        <li>전체</li>
+        <li>디저트</li>
+        <li>상품권</li>
+        <li>생필품</li>
+      </ol>
+    </nav>
+    <main>
+      <!-- 전체 카테고리 -->
+      <section id="all" class="category_section">
+        <header>
+          <h3 class="section_title"></h3>
+        </header>
+        <article class="category_article"></article>
+      </section>
     </main>
     <footer class="page_footer">
-        <div>SOPT WEEK1 assignment complete!!!</div>
+      <div>SOPT WEEK1 assignment complete!!!</div>
     </footer>
-</body>
+  </body>
+  <script src="/week1/js/addCart.js" type="module"></script>
+  <script src="/week1/js/filter.js" type="module"></script>
 </html>
