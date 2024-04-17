@@ -34,10 +34,12 @@
 /* 장바구니 표 */
 .main_cart {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   margin-top: 300px;
   padding: 10px;
-  background-color: bisque;
+  /* background-color: rgb(205, 215, 255); */
 }
 .cart_container {
   display: flex;
@@ -46,33 +48,44 @@
   flex-direction: column;
   width: 70vw;
   height: 50vh;
-  background-color: beige;
-  /* overflow-y: auto;
-  overflow-x: hidden; */
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: aliceblue;
 }
 .cart_container div {
-  border: solid 1px green;
-}
-
-.cartList-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 300px;
-  background-color: violet;
+  height: 13vh;
+  border: solid 1px gainsboro;
+}
+
+.cartList-header {
+  position: fixed;
+  top: 195px;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+  height: 14vh;
+  background-color: rgb(255, 229, 255);
+  /* margin-top: 0vh; */
+}
+.cartList-header div {
+  width: 20%;
 }
 .cartList-header .product_info {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15rem;
+  width: 40%;
 }
 article {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* flex-direction: column; */
   width: 50vw;
   height: 100vh;
 }
@@ -82,7 +95,8 @@ article div {
 }
 
 .carListItem {
-  background-color: aquamarine;
+  width: 70vw;
+  background-color: rgb(243, 255, 198);
 }
 .img_div img {
   width: 100px;
@@ -120,9 +134,9 @@ article div {
 }
 /* 공통 */
 button {
-  background-color: pink;
   border: none;
-  border-radius: 30px;
   width: 10vw;
   height: 3vh;
+  background-color: pink;
+  border-radius: 30px;
 }
