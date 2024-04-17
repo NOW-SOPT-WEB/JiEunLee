@@ -156,10 +156,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     totalPriceContent.textContent =
       "총금액" + totalPrice.toLocaleString() + "원";
+    modal.style.display = "block";
   });
   const modal = document.querySelector(".buy_modal");
-  modal.style.display = "block";
   const modalBuyBtn = document.querySelector(".modal_buy-btn");
+  const modalCloseBtn = document.querySelector(".modal_close-btn");
+
+  modalCloseBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 
   modalBuyBtn.addEventListener("click", () => {
     storedData = storedData.filter(
