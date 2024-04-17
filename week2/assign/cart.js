@@ -107,4 +107,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
     container.appendChild(article);
   }
+  const goHome = () => {
+    window.location.href = "/week1/home.html";
+  };
+  // 홈으로 돌아가기 버튼
+  const goHomeBtn = document
+    .querySelector(".goHome-btn")
+    .addEventListener("click", goHome);
+
+  // 구매하기 버튼
+  const buyBtn = document.querySelector(".buy-btn");
+
+  buyBtn.addEventListener("click", () => {
+    const modalContent = document.querySelector(".modal_content");
+    while (modalContent.firstChild) {
+      modalContent.removeChild(modalContent.firstChild);
+    }
+
+    let totalPrice = 0;
+
+    purchaseList.forEach((item) => {
+      const buyItem = document.createElement("div");
+      buyItem.className = "purchaseItemDiv";
+
+      const buyImg = document.createElement("img");
+      buyImg.src = item.imgSrc;
+      buyImg.alt = item.title;
+      buyItem.appendChild(buyImg);
+
+      const buyTitle = document.createElement("h6");
+      buyTitle.className = "buyTitle";
+      buyTitle.textContent = item.title;
+
+      const buyPrice = document.createElement("div");
+      buyPrice.className = "buyPrice";
+      buyPrice.textContent = item.price;
+
+      buyItem.appendChild(buyTitle);
+      buyItem.appendChild(buyPrice);
+
+      modalContent.appendChild(buyItem);
+      totalPrice += item.price;
+    });
+    const totalPriceContent = document.querySelector(".total_price");
+
+    totalPriceContent.textContent = "총금액" + totalPrice + "원";
+  });
+  const modal = document.querySelector(".buy_modal");
+  modal.style.display = "block";
+  const modalBuyBtn = document.querySelector(".modal_buy-btn");
+
+  modalBuyBtn.addEventListener("click", () => {
+    storedData = storedData.filter(
+      (item) =>
+        !purchaseList.some((purchaseItem) => purchaseItem.id === item.id),
+    );
+    console.log(storedData);
+    localStorage.setItem("cartList", JSON.stringify(storedData));
+    purchaseList = [];
+    alert("주문완료");
+    modal.style.display = "none";
+    window.location.reload(true);
+  });
 });
