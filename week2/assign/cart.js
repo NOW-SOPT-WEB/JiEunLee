@@ -7,18 +7,35 @@ const logoBtn = document.querySelector(".header_logo-btn");
 logoBtn.addEventListener("click", () => {
   window.location.href = "/week1/home.html";
 });
+const storedDataString = localStorage.getItem("cartList");
+let storedData = JSON.parse(storedDataString);
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".cart_container");
 
-  const storedDataString = localStorage.getItem("cartList");
-  let storedData = JSON.parse(storedDataString);
+  const selectAllBtn = document.querySelector(".selectAll");
+  selectAllBtn.addEventListener("change", (e) => {
+    const isChecked = e.target.checked;
+    purchaseList = isChecked ? [...storedData] : [];
+    itemCheckboxes.forEach((checkbox) => {
+      checkbox.checked = isChecked;
+    });
+    console.log(purchaseList);
+  });
 
-  const product_checkbox = document.querySelector(".product_checkbox");
-  const product_info = document.querySelector(".product_info");
-  const product_price = document.querySelector(".product_price");
-  const product_category = document.querySelector(".product_category");
-  const product_delete = document.querySelector(".product_delete");
+  selectAllBtn.addEventListener("change", (e) => {
+    if (e.target.checked) {
+      purchaseList = [...storedData];
+    } else {
+      purchaseList = [];
+    }
+  });
+  let purchaseList = [];
+  let itemCheckboxes = [];
+  // const product_info = document.querySelector(".product_info");
+  // const product_price = document.querySelector(".product_price");
+  // const product_category = document.querySelector(".product_category");
+  // const product_delete = document.querySelector(".product_delete");
 
   console.log(storedData);
 
@@ -34,6 +51,21 @@ document.addEventListener("DOMContentLoaded", () => {
     check_divBtn.type = "checkbox";
     check_div.appendChild(check_divBtn);
     article.appendChild(check_div);
+
+    check_divBtn.addEventListener("change", (event) => {
+      if (event.target.checked) {
+        purchaseList.push(eachStoredData);
+        console.log("check");
+      } else {
+        purchaseList = purchaseList.filter(
+          (purchaseItem) => purchaseItem.id !== eachStoredData.id,
+        );
+      }
+      console.log(purchaseList);
+    });
+    itemCheckboxes.push(check_divBtn);
+    const productInfoWrapper = document.createElement("div");
+    productInfoWrapper.className = "productInfoWrapper";
 
     const title_div = document.createElement("div");
     const title_par = document.createElement("p");
