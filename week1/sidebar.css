@@ -1,0 +1,10 @@
+.sideBar_nav p {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin: 10px 20px;
+  &:hover {
+    background-color: cornsilk;
+    color: pink;
+  }
+}

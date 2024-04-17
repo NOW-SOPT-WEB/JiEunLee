@@ -22,7 +22,7 @@ WishList.forEach((item) => {
   itemTitle.innerText = title;
 
   const itemPrice = document.createElement("p");
-  itemPrice.innerText = price;
+  itemPrice.innerText = price + "원";
 
   container.append(itemImg, itemTitle, itemPrice, likeBtn);
   category_article.appendChild(container);
@@ -64,7 +64,7 @@ function NavClick(category_name) {
     itemTitle.innerText = title;
 
     const itemPrice = document.createElement("p");
-    itemPrice.innerText = price;
+    itemPrice.innerText = price + "원";
 
     container.append(itemImg, itemTitle, itemPrice, likeBtn);
     category_article.appendChild(container);
