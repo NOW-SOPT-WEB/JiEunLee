@@ -1,3 +1,30 @@
+/* 사이드바 */
+.sideBar_nav {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 순차적 애니메이션 딜레이 적용 */
+.sideBar_nav p:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.sideBar_nav p:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.sideBar_nav p:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
 .sideBar_nav p {
   display: flex;
   justify-content: center;
