@@ -74,8 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
     article.appendChild(title_div);
 
     const price_div = document.createElement("div");
-    price_div.innerHTML = eachStoredData.price;
+    price_div.innerHTML =
+      parseInt(eachStoredData.price, 10).toLocaleString() + "원";
     article.appendChild(price_div);
+    console.log(price_div);
 
     const img_div = document.createElement("div");
     img_div.className = "img_div";
@@ -134,6 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
       buyImg.src = item.imgSrc;
       buyImg.alt = item.title;
       buyItem.appendChild(buyImg);
+      buyImg.style.width = "100px";
 
       const buyTitle = document.createElement("h6");
       buyTitle.className = "buyTitle";
@@ -141,17 +144,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const buyPrice = document.createElement("div");
       buyPrice.className = "buyPrice";
-      buyPrice.textContent = item.price;
+      buyPrice.textContent = parseInt(item.price).toLocaleString() + "원";
 
       buyItem.appendChild(buyTitle);
       buyItem.appendChild(buyPrice);
 
       modalContent.appendChild(buyItem);
-      totalPrice += item.price;
+      totalPrice += parseInt(item.price);
     });
     const totalPriceContent = document.querySelector(".total_price");
 
-    totalPriceContent.textContent = "총금액" + totalPrice + "원";
+    totalPriceContent.textContent =
+      "총금액" + totalPrice.toLocaleString() + "원";
   });
   const modal = document.querySelector(".buy_modal");
   modal.style.display = "block";
