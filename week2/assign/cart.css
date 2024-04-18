@@ -116,6 +116,7 @@ button {
 }
 .modal_content {
   display: flex;
+  flex-wrap: wrap;
   margin: 10px;
 }
 .total_price {
@@ -124,4 +125,7 @@ button {
 .modal_close-btn {
   margin-left: 470px;
   font-size: 2rem;
+}
+.purchaseItemDiv {
+  width: 100px;
 }
