@@ -29,6 +29,7 @@ WishList.forEach((item) => {
   category_article.appendChild(container);
 
   // 배너
+
   const slide = document.querySelector(".slide");
 
   const item_img = document.createElement("img");
@@ -37,6 +38,15 @@ WishList.forEach((item) => {
   item_img.classList.add("item_img");
 
   slide.appendChild(item_img);
+
+  // 두 번째 슬라이드에 추가
+  const slide2 = document.querySelector(".slide2");
+
+  const itemImg2 = document.createElement("img");
+  itemImg2.src = imgSrc;
+  itemImg2.alt = title;
+  itemImg2.classList.add("item_img");
+  slide2.appendChild(itemImg2);
 });
 
 // 카테고리 클릭시
