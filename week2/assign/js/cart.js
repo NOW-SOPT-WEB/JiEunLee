@@ -24,11 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   selectAllBtn.addEventListener("change", (e) => {
-    if (e.target.checked) {
-      purchaseList = [...storedData];
-    } else {
-      purchaseList = [];
-    }
+    e.target.checked ? (purchaseList = [...storedData]) : (purchaseList = []);
   });
   let purchaseList = [];
   let itemCheckboxes = [];
@@ -43,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // console.log(eachStoredData);
 
     const article = document.createElement("article");
-    article.className = "carListItem";
+    article.classList.add("carListItem");
 
     const check_div = document.createElement("div");
     const check_divBtn = document.createElement("input");
@@ -64,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     itemCheckboxes.push(check_divBtn);
     const productInfoWrapper = document.createElement("div");
-    productInfoWrapper.className = "productInfoWrapper";
+    productInfoWrapper.classList.add("productInfoWrapper");
 
     const title_div = document.createElement("div");
     const title_par = document.createElement("p");
@@ -79,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(price_div);
 
     const img_div = document.createElement("div");
-    img_div.className = "img_div";
+    img_div.classList.add("img_div");
     const img = document.createElement("img");
     img.src = eachStoredData.imgSrc;
     img.alt = eachStoredData.title;
@@ -129,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     purchaseList.forEach((item) => {
       const buyItem = document.createElement("div");
-      buyItem.className = "purchaseItemDiv";
+      buyItem.classList.add("purchaseItemDiv");
 
       const buyImg = document.createElement("img");
       buyImg.src = item.imgSrc;
@@ -138,11 +134,11 @@ document.addEventListener("DOMContentLoaded", () => {
       buyImg.style.width = "100px";
 
       const buyTitle = document.createElement("h6");
-      buyTitle.className = "buyTitle";
+      buyTitle.classList.add("buyTitle");
       buyTitle.textContent = item.title;
 
       const buyPrice = document.createElement("div");
-      buyPrice.className = "buyPrice";
+      buyPrice.classList.add("buyPrice");
       buyPrice.textContent = parseInt(item.price).toLocaleString() + "원";
 
       buyItem.appendChild(buyTitle);
