@@ -28,16 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   let purchaseList = [];
   let itemCheckboxes = [];
-  // const product_info = document.querySelector(".product_info");
-  // const product_price = document.querySelector(".product_price");
-  // const product_category = document.querySelector(".product_category");
-  // const product_delete = document.querySelector(".product_delete");
 
   storedData.forEach((eachStoredData) => {
-    // for (let i = 0; i < storedData.length; i++) {
-    // const eachStoredData = storedData[i];
-    // console.log(eachStoredData);
-
     const article = document.createElement("article");
     article.classList.add("carListItem");
 

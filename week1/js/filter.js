@@ -70,6 +70,10 @@ function NavClick(category_name) {
     container.append(itemImg, itemTitle, itemPrice, likeBtn);
     category_article.appendChild(container);
     console.log(category_article);
+
+    container.addEventListener("click", (e) =>
+      handleAddCart(e, category, imgSrc, title),
+    );
   });
 }
 
