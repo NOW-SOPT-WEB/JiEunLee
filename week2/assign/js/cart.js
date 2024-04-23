@@ -37,10 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // const product_category = document.querySelector(".product_category");
   // const product_delete = document.querySelector(".product_delete");
 
-  console.log(storedData);
-
-  for (let i = 0; i < storedData.length; i++) {
-    const eachStoredData = storedData[i];
+  storedData.forEach((eachStoredData) => {
+    // for (let i = 0; i < storedData.length; i++) {
+    // const eachStoredData = storedData[i];
     // console.log(eachStoredData);
 
     const article = document.createElement("article");
@@ -108,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     article.appendChild(delete_div);
 
     container.appendChild(article);
-  }
+  });
   const goHome = () => {
     window.location.href = "/week1/home.html";
   };
