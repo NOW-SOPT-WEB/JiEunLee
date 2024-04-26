@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cart.css" />
+    <title>지은이 장바구니</title>
+  </head>
+  <body>
+    <header class="page_header">
+      <button class="header_logo-btn">
+        <img id="header_logo" src="/week1/img/header/present_logo.png" />
+      </button>
+      <h1>지은이 위시리스트</h1>
+      <img id="header_hamburger" src="/week1/img/header/hamburger_icon.png" />
+    </header>
+    <main class="main_cart">
+      <section class="cart_container">
+        <header class="cartList-header">
+          <div><input type="checkbox" class="selectAll" /></div>
+          <div class="product_info">상품정보</div>
+          <div class="product_price">상품 금액</div>
+          <div class="product_category">카테고리</div>
+          <div class="product_delete">비고</div>
+        </header>
+      </section>
+      <section>
+        <button type="button" class="buy-btn">구매하기</button>
+        <button type="button" class="goHome-btn">홈으로</button>
+      </section>
+
+      <!-- 구매하기 modal 창 -->
+      <div>
+        <div
+          class="buy_modal"
+          style="display: none; background-color: rgb(213, 246, 253)"
+        >
+          <div class="modal_close-btn">X</div>
+          <div class="buy_table">
+            <div class="modal_content"></div>
+            <div class="total_price">총 금액:</div>
+            <div>
+              <button type="button" class="modal_buy-btn">구매하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/week2/assign/js/cart.js" type="module"></script>
+  </body>
+</html>

@@ -1,309 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta h4="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta h4="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="sidebar.css" />
     <title>지은이 위시리스트</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="page_header">
-        <img id="header_logo" src="/week1/img/present_logo.png"  />
-        <h1>지은이 위시리스트</h1>
-        <img id="header_hamburger" src="/week1/img/hamburger_icon.png">
+      <button class="header_logo-btn">
+        <img id="header_logo" src="/week1/img/header/present_logo.png" />
+      </button>
+      <h1>지은이 위시리스트</h1>
+      <img id="header_hamburger" src="/week1/img/header/hamburger_icon.png" />
     </header>
 
+    <!-- 배너 -->
+      <div class="banner">
+        <div class="slide"></div>
+        <div class="slide2"></div>
+      </div>
+    </div>
+    <nav class="category_nav">
+      <ol>
+        <li>전체</li>
+        <li>디저트</li>
+        <li>상품권</li>
+        <li>생필품</li>
+      </ol>
+    </nav>
+
+    <nav class="sideBar_nav">
+      <button type="button" class="sideBar_close-btn">
+        <img src="/week1/img/sideBar/close.svg" alt="sideBar_close" />
+      </button>
+      <p>관심 상품 목록</p>
+      <p>관리자 페이지</p>
+      <p class="goCart-btn">장바구니</p>
+    </nav>
+
     <main>
-        <!-- 배너 -->
-        <div class="banner">
-            <ul class="item_list">
-                <li class="item">
-                    <img src="/week1/img/dessert/eggtart.jpeg" alt="에그타르트"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/dessert/strawberrycake.jpeg" alt="딸기생크림케이크"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/dessert/yogurt.jpeg"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/paper/oliveyoung.jpeg" alt="올리브영"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/paper/baemin.png" alt="배민상품권1만원""/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/paper/oliveyoung.jpeg" alt="올리브영2만원권""/>
-                </li>
-            </ul>
-
-            <ul class="item_list">
-                <li class="item">
-                    <img src="/week1/img/dessert/eggtart.jpeg" alt="에그타르트"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/dessert/strawberrycake.jpeg" alt="딸기생크림케이크"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/dessert/yogurt.jpeg"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/paper/oliveyoung.jpeg" alt="올리브영"/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/paper/baemin.png" alt="배민상품권1만원""/>
-                </li>
-                <li class="item">
-                    <img src="/week1/img/paper/oliveyoung.jpeg" alt="올리브영2만원권""/>
-                </li>
-            </ul>
-        </div>
-        <nav class="category_nav">
-            <ol>
-                <a href="#all">전체</a>
-                <a href="#desert">디저트</a>
-                <a href="#paper">상품권</a>
-                <a href="#routin">생필품</a>
-            </ol>
-        </nav>
-        <!-- 전체 카테고리 -->
-        <section id="all" class="category_section">
-            <header>
-                <h3 class="section_title">전체</h3>
-            </header>
-            <article class="category_article">
-                <div>
-                    <img src="/week1/img/dessert/eggtart.jpeg" alt="에그타르트"/>
-                    <button>❤️</button>
-                    <h4>에그타르트</h4>
-                    <price>10000won</price>
-                </div>
-                <div>
-                    <img src="/week1/img/dessert/strawberrycake.jpeg" alt="딸기생크림케이크"  />
-                    <button>❤️</button>
-                    <h4>딸기생크림케이크</h4>
-                    <price>30000won</price>
-                </div>
-                <div>
-                    <img src="/week1/img/dessert/yogurt.jpeg"  />
-                    <button>❤️</button>
-                    <h4>요거트 아이스크림의 정석</h4>
-                    <price>10000won</price>
-                </div>
-                <div>
-                    <img src="/week1/img/dessert/shake.jpeg" alt="단백질 쉐이크"  />
-                    <button>❤️</button>
-                    <h4>단백질 쉐이크</h4>
-                    <price>5000won</price>
-                </div>
-                <div>
-                    <img src="/week1/img/dessert/salmon.jpeg" alt="연어초밥"  />
-                    <button>❤️</button>
-                    <h4>연어초밥</h4>
-                    <price>17000won</price>
-                </div>
-
-                <div>
-                    <img src="/week1/img/paper/baemin.png" alt="배민상품권1만원" />
-                    <button>❤️</button>
-                    <h4>배민상품권 1만원</h4>
-                    <price>10000won</price>
-                    
-                </div>
-                <div>
-                    <img src="/week1/img/paper/oliveyoung.jpeg" alt="올리브영2만원권" />
-                    <button>❤️</button>
-                    <h4>올리브영 상품권 2만원</h4>
-                    <price>20000won</price>
-                    
-                </div>
-                <div>
-                    <img src="/week1/img/paper/baeskin.jpeg" alt="배민1만원권" />
-                    <button>❤️</button>
-                    <h4>배스킨라빈스 상품권 1만원</h4>
-                    <price>10000won</price>
-                    
-                </div>
-                <div>
-                    <img src="/week1/img/paper/starbucks.avif" alt="스타벅스"  />
-                    <button>❤️</button>
-                    <h4>스타벅스 상품권 1만원</h4>
-                    <price>10000won</price>
-                </div>
-                <div>
-                    <img src="/week1/img/paper/gs25.jpeg" alt="GS25 편의점 1만원권" />
-                    <button>❤️</button>
-                    <h4>GS25 편의점 1만원권</h4>
-                    <price>10000won</price>
-                </div>
-
-                <div>
-                    <img src="/week1/img/routine/masage.jpeg" alt="눈피로회복마사지기""  />
-                    <button>❤️</button>
-                    <h4>눈 피로회복 마사지기</h4>
-                    <price>25000won</price>
-                    
-                </div>
-                <div>
-                    <img src="/week1/img/routine/tumbler.jpeg" alt="스탠리텀블러"  />
-                    <button>❤️</button>
-                    <h4>스탠리 텀블러</h4>
-                    <price>30000won</price>
-                    
-                </div>
-                <div>
-                    <img src="/week1/img/routine/handcream.jpeg" alt="탬버린즈 핸드크림"  />
-                    <button>❤️</button>
-                    <h4>탬버린즈 핸드크림</h4>
-                    <price>18000won</price>
-                    
-                </div>
-                <div>
-                    <img src="/week1/img/routine/cerealbowl.jpeg" alt="우드 시리얼볼"  />
-                    <button>❤️</button>
-                    <h4>우드 시리얼 볼</h4>
-                    <price>9900won</price>
-                </div>
-                <div>
-                    <img src="/week1/img/routine/necklace.jpeg" alt="로제 목걸이"  />
-                    <button>❤️</button>
-                    <h4>로제 목걸이</h4>
-                    <price>99000won</price>
-                </div>
-                
-                
-                
-            </article>
-            
-            </section>
-            <section id="dessert" class="category_section">
-            <header>
-                <h3 class="section_title">디저트</h3>
-            </header>
-            <article class="category_article">
-                <div>
-                    <img src="/week1/img/dessert/eggtart.jpeg" alt="에그타르트"  />
-                    <button>❤️</button>
-                    <h4>에그타르트</h4>
-                    <price>10000won</price>
-                </div>
-                <div>
-                    <img src="/week1/img/dessert/strawberrycake.jpeg" alt="딸기생크림케이크"  />
-                    <button>❤️</button>
-                    <h4>딸기생크림케이크</h4>
-                    <price>30000won</price>
-                </div>
-                <div>
-                    <img src="/week1/img/dessert/yogurt.jpeg"/>
-                    <button>❤️</button>
-                    <h4>요거트 아이스크림의 정석</h4>
-                    <price>10000won</price>
-                    
-                </div>
-                <div>
-                    <img src="/week1/img/dessert/shake.jpeg" alt="단백질 쉐이크"  />
-                    <button>❤️</button>
-                    <h4>단백질 쉐이크</h4>
-                    <price>5000won</price>
-                    
-                </div>
-                <div>
-                    <img src="/week1/img/dessert/salmon.jpeg" alt="연어초밥"  />
-                    <button>❤️</button>
-                    <h4>연어초밥</h4>
-                    <price>17000won</price>
-                </div>
-            </article>
-            
-            </section>
-            <!-- 상품권 카테고리 -->
-            <section id="paper" class="category_section">
-
-            <header>
-                <h3 class="section_title">상품권</h3>
-            </header>
-            <article class="category_article">
-                <div>
-                    <img src="/week1/img/paper/baemin.png" alt="배민상품권1만원" />
-                    <button>❤️</button>
-                    <h4>배민상품권 1만원</h4>
-                    <price>10000won</price>
-                    
-                </div>
-                <div>
-                    <img src="/week1/img/paper/oliveyoung.jpeg" alt="올리브영2만원권" />
-                    <button>❤️</button>
-                    <h4>올리브영 상품권 2만원</h4>
-                    <price>20000won</price>
-                    
-                </div>
-                <div>
-                    <img src="/week1/img/paper/baeskin.jpeg" alt="배민1만원권" />
-                    <button>❤️</button>
-                    <h4>배스킨라빈스 상품권 1만원</h4>
-                    <price>10000won</price>
-                </div>
-                <div>
-                    <img src="/week1/img/paper/starbucks.avif" alt="스타벅스" />
-                    <button>❤️</button>
-                    <h4>스타벅스 상품권 1만원</h4>
-                    <price>10000won</price>
-                </div>
-                <div>
-                    <img src="/week1/img/paper/gs25.jpeg" alt="GS25 편의점 1만원권" />
-                    <button>❤️</button>
-                    <h4>GS25 편의점 1만원권</h4>
-                    <price>10000won</price>
-                </div>
-            </article>
-            
-        </section>
-        <!-- 생필품 카테고리 -->
-        <section id="routin" class="category_section">
-
-            <header>
-                <h3 class="section_title">생필품</h3>
-            </header>
-            <article class="category_article">
-                <div>
-                    <img src="/week1/img/routine/masage.jpeg" alt="눈피로회복마사지기""  />
-                    <button>❤️</button>
-                    <h4>눈 피로회복 마사지기</h4>
-                    <price>25000won</price>
-                    
-                </div>
-                <div>
-                    <img src="/week1/img/routine/tumbler.jpeg" alt="스탠리텀블러"  />
-                    <button>❤️</button>
-                    <h4>스탠리 텀블러</h4>
-                    <price>30000won</price>
-                    
-                </div>
-                <div>
-                    <img src="/week1/img/routine/handcream.jpeg" alt="탬버린즈 핸드크림"  />
-                    <button>❤️</button>
-                    <h4>탬버린즈 핸드크림</h4>
-                    <price>18000won</price>
-                    
-                </div>
-                <div>
-                    <img src="/week1/img/routine/cerealbowl.jpeg" alt="우드 시리얼볼"  />
-                    <button>❤️</button>
-                    <h4>우드 시리얼 볼</h4>
-                    <price>9900won</price>
-                </div>
-                <div>
-                    <img src="/week1/img/routine/necklace.jpeg" alt="로제 목걸이"  />
-                    <button>❤️</button>
-                    <h4>로제 목걸이</h4>
-                    <price>99000won</price>
-                </div>
-            </article>
-            
-        </section>        
+      <!-- 전체 카테고리 -->
+      <section id="all" class="category_section">
+        <header>
+          <h3 class="section_title"></h3>
+        </header>
+        <article class="category_article"></article>
+      </section>
     </main>
     <footer class="page_footer">
-        <div>SOPT WEEK1 assignment complete!!!</div>
+      <div>SOPT WEEK1 assignment complete!!!</div>
     </footer>
-</body>
+  </body>
+  <script src="/week1/js/filter.js" type="module"></script>
+  <script src="/week1/js/sidebar.js" type="module"></script>
 </html>
