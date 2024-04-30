@@ -1,6 +1,18 @@
 import styled from "styled-components";
+import { useEffect } from "react";
+
 // eslint-disable-next-line react/prop-types
-function Header({ score }) {
+function Header({ score, modalVisible, setModalVisible }) {
+  useEffect(() => {
+    if (score === 2) {
+      toggleModal();
+    }
+  }, [score]);
+
+  const toggleModal = () => {
+    setModalVisible(!modalVisible);
+  };
+
   return (
     <HeaderWrapper>
       <Title>빈지노 앨범 맞추기</Title>
