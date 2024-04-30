@@ -1,22 +1,10 @@
 import { useState, useMemo, useEffect } from "react";
 import styled from "styled-components";
-
-const GAMEDATA = [
-  { id: 1, imgUrl: "/card/12.webp" },
-  { id: 2, imgUrl: "/card/2426.webp" },
-  { id: 3, imgUrl: "/card/lifeInColors.jpeg" },
-  { id: 4, imgUrl: "/card/lifeslike.jpeg" },
-  { id: 5, imgUrl: "/card/nowitzki.webp" },
-  { id: 6, imgUrl: "/card/WeAreGoingTo.jpeg" },
-  { id: 7, imgUrl: "/card/waves.jpeg" },
-  { id: 8, imgUrl: "/card/soWhat.jpeg" },
-  { id: 9, imgUrl: "/card/daliVan.jpeg" },
-  { id: 10, imgUrl: "/card/always.jpeg" },
-];
+import { IMAGEDATA } from "../contants/images";
 
 function MainPage() {
   const getMixedCardList = () => {
-    return [...GAMEDATA, ...GAMEDATA]
+    return [...IMAGEDATA, ...IMAGEDATA]
       .map((card) => ({ ...card, status: false })) // 각 카드에 status 추가
       .sort(() => 0.5 - Math.random());
   };
@@ -82,7 +70,11 @@ function MainPage() {
             <Card key={index} onClick={() => handleClick(index)}>
               {card.status ? (
                 <CardFront>
-                  <CardFrontImg src={card.imgUrl} alt={card.id}></CardFrontImg>
+                  <CardFrontImg
+                    id={card.id}
+                    src={card.imgUrl}
+                    alt={card.description}
+                  ></CardFrontImg>
                 </CardFront>
               ) : (
                 <CardBack>
