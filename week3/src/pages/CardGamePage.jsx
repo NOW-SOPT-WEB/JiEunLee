@@ -79,7 +79,7 @@ function MainPage() {
               ) : (
                 <CardBack>
                   <CardBackImg
-                    src="/card/cardBack.png"
+                    src="/src/assets/images/backCard/cardBack.png"
                     alt="card's back"
                   ></CardBackImg>
                 </CardBack>
