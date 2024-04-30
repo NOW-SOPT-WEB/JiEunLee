@@ -2,17 +2,16 @@ import { useState, useMemo, useEffect } from "react";
 import styled from "styled-components";
 import { IMAGEDATA } from "../contants/images";
 
-function MainPage() {
+// eslint-disable-next-line react/prop-types
+function MainPage({ score, setScore }) {
   const getMixedCardList = () => {
     return [...IMAGEDATA, ...IMAGEDATA]
-      .map((card) => ({ ...card, status: false })) // 각 카드에 status 추가
+      .map((card) => ({ ...card, status: false }))
       .sort(() => 0.5 - Math.random());
   };
 
   const [cards, setCards] = useState(useMemo(getMixedCardList, []));
   const [clicked, setClicked] = useState([]);
-
-  const [score, setScore] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
@@ -28,7 +27,7 @@ function MainPage() {
         setTimeout(() => setCards(newCards), 1000);
       } else {
         if (score < 5) {
-          setScore((score) => score + 1);
+          setScore(score + 1);
           if (score == 5) {
             toggleModal();
           }
@@ -54,11 +53,6 @@ function MainPage() {
 
   return (
     <>
-      <HeaderWrapper>
-        <Title>빈지노 앨범 맞추기</Title>
-        <Count>{score}/5</Count>
-        <ResetBtn>RESET</ResetBtn>
-      </HeaderWrapper>
       <ButtonWrapper>
         <EasyBtn>Easy</EasyBtn>
         <NormalBtn>Normal</NormalBtn>
@@ -109,6 +103,11 @@ const Wrapper = styled.div`
 `;
 // 모달
 
+const Title = styled.p`
+  color: ${(props) => props.theme.colors.white};
+  font-size: ${({ theme }) => theme.fonts.lg};
+`;
+
 const ModalWrapper = styled.div`
   /* display: flex;
   justify-content: center;
@@ -142,30 +141,6 @@ const RegameBtn = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.colors.skyBlue};
   }
-`;
-
-// header
-const HeaderWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  gap: 10px;
-  background-color: ${({ theme }) => theme.colors.purple};
-`;
-const Title = styled.p`
-  color: ${(props) => props.theme.colors.white};
-  font-size: ${({ theme }) => theme.fonts.lg};
-`;
-const Count = styled.p`
-  color: ${(props) => props.theme.colors.white};
-`;
-const ResetBtn = styled.button`
-  width: 10vw;
-  background-color: ${({ theme }) => theme.colors.lightPurple};
-  border: none;
-  border-radius: 30px;
 `;
 
 // button
