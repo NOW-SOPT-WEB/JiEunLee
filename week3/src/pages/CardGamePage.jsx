@@ -80,7 +80,7 @@ const CardWrapper = styled.div`
   width: 70vw;
   justify-content: center;
   align-items: center;
-  gap: 10vw;
+  gap: 5vw;
   flex-wrap: wrap;
 `;
 const Card = styled.div`

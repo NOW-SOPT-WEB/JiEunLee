@@ -16,7 +16,7 @@ ${reset}
 }
   
 * {
-   font-family: 'KOTRAHOPE';
+    font-family: 'KOTRAHOPE';
     box-sizing: border-box;
 }
     

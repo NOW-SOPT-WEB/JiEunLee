@@ -23,12 +23,12 @@ function Modal({
   return (
     <>
       {modalVisible && (
-        <ModalWrapper>
+        <ModalBackground>
           <ModalDiv>
-            <Title>축하합니다</Title>
+            <Title>🎊 축하합니다 🎊</Title>
             <RegameBtn onClick={toggleModal}>게임으로 돌아가기</RegameBtn>
           </ModalDiv>
-        </ModalWrapper>
+        </ModalBackground>
       )}
       ;
     </>
@@ -39,17 +39,16 @@ function Modal({
 
 const Title = styled.p`
   color: ${(props) => props.theme.colors.white};
-  font-size: ${({ theme }) => theme.fonts.lg};
+  font-size: 2rem;
 `;
 
-const ModalWrapper = styled.div`
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* height: 100%;
+const ModalBackground = styled.div`
+  height: 100%;
+  top: 0;
+  left: 0;
   width: 100%;
   position: fixed;
-  background-color: ${({ theme }) => theme.colors.black}; */
+  background-color: rgba(0, 0, 0, 0.5);
 `;
 
 const ModalDiv = styled.div`
@@ -63,7 +62,9 @@ const ModalDiv = styled.div`
   align-items: center;
   height: 200px;
   width: 350px;
-  background-color: ${({ theme }) => theme.colors.skyBlue};
+  background-color: ${({ theme }) => theme.colors.lightPink};
+  border: 2px solid ${({ theme }) => theme.colors.lightYellow};
+  border-radius: 3rem;
 `;
 const RegameBtn = styled.button`
   width: 10vw;

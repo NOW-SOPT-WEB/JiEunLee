@@ -32,11 +32,13 @@ function LevelButton({ setCards, setDifficulty, getMixedCardList }) {
 const ButtonWrapper = styled.div`
   display: flex;
   gap: 2vw;
+  justify-content: center;
+  align-items: center;
+  margin: 15vh 0 8vh 0;
 `;
 const EasyBtn = styled.button`
   width: 10vw;
   height: 4vh;
-  margin-top: 5vh;
   background-color: ${({ theme }) => theme.colors.lightYellow};
   border: none;
   border-radius: 30px;
@@ -47,7 +49,6 @@ const EasyBtn = styled.button`
 const NormalBtn = styled.button`
   width: 10vw;
   height: 4vh;
-  margin-top: 5vh;
   background-color: ${({ theme }) => theme.colors.lightYellow};
   border: none;
   border-radius: 30px;
@@ -58,7 +59,6 @@ const NormalBtn = styled.button`
 const HardBtn = styled.button`
   width: 10vw;
   height: 4vh;
-  margin-top: 5vh;
   background-color: ${({ theme }) => theme.colors.lightYellow};
   border: none;
   border-radius: 30px;

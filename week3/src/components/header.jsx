@@ -29,7 +29,7 @@ function Header({
 
   return (
     <HeaderWrapper>
-      <Title>빈지노 앨범 맞추기</Title>
+      <Title>숨은 앨범커버를 찾아라!</Title>
       <Count>
         {score}/{numPairs}
       </Count>
@@ -40,6 +40,9 @@ function Header({
 
 // header
 const HeaderWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,14 +53,19 @@ const HeaderWrapper = styled.div`
 `;
 const Title = styled.p`
   color: ${(props) => props.theme.colors.white};
-  font-size: ${({ theme }) => theme.fonts.lg};
+  font-size: 2rem;
 `;
 const Count = styled.p`
   color: ${(props) => props.theme.colors.white};
 `;
 const ResetBtn = styled.button`
-  width: 10vw;
-  background-color: ${({ theme }) => theme.colors.lightPurple};
+  position: fixed;
+  right: 6px;
+  top: 5px;
+  height: 50px;
+  width: 80px;
+  font-size: 2rem;
+  background-color: ${({ theme }) => theme.colors.lightYellow};
   border: none;
   border-radius: 30px;
 `;
