@@ -13,7 +13,12 @@ function App() {
   const [modalVisible, setModalVisible] = useState(false);
 
   const getMixedCardList = () => {
-    return [...IMAGEDATA, ...IMAGEDATA]
+    // 모든 카드 이미지 중에서 게임에 사용할 이미지를 무작위로 선택
+    const shuffled = IMAGEDATA.sort(() => 0.5 - Math.random());
+    const selectedImages = shuffled.slice(0, 5);
+
+    // 5개를 두번씩 사용하여 10개의 카드 데이터 생성
+    return [...selectedImages, ...selectedImages]
       .map((card) => ({ ...card, status: false }))
       .sort(() => 0.5 - Math.random());
   };
@@ -37,6 +42,7 @@ function App() {
         />
         <Modal
           setCards={setCards}
+          setScore={setScore}
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
           resetGame={getMixedCardList}

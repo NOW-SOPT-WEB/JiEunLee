@@ -1,8 +1,14 @@
+/* eslint-disable react/prop-types */
 // import React from "react";
 import styled from "styled-components";
 
-// eslint-disable-next-line react/prop-types
-function Modal({ modalVisible, setModalVisible, resetGame, setCards }) {
+function Modal({
+  modalVisible,
+  setModalVisible,
+  resetGame,
+  setCards,
+  setScore,
+}) {
   const toggleModal = () => {
     if (modalVisible) {
       setModalVisible(false);
@@ -12,6 +18,7 @@ function Modal({ modalVisible, setModalVisible, resetGame, setCards }) {
   const resetGameCards = () => {
     const newCards = resetGame();
     setCards(newCards);
+    setScore(0);
   };
 
   return (
