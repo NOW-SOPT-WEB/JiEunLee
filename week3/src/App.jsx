@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./styles/GlobalStyle";
@@ -6,24 +6,29 @@ import theme from "./styles/theme";
 import Header from "./components/header";
 import MainPage from "./pages/CardGamePage";
 import Modal from "./components/Modal";
+import LevelButton from "./components/LevelButton";
 import { IMAGEDATA } from "./contants/images";
 
 function App() {
   const [score, setScore] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
+  const [difficulty, setDifficulty] = useState("easy");
+  const [cards, setCards] = useState([]);
+  const [numPairs, setNumPairs] = useState(5); // 초기 카드 쌍 수 설정
 
-  const getMixedCardList = () => {
-    // 모든 카드 이미지 중에서 게임에 사용할 이미지를 무작위로 선택
-    const shuffled = IMAGEDATA.sort(() => 0.5 - Math.random());
-    const selectedImages = shuffled.slice(0, 5);
-
-    // 5개를 두번씩 사용하여 10개의 카드 데이터 생성
+  const getMixedCardList = (numPairs) => {
+    const shuffled = [...IMAGEDATA].sort(() => 0.5 - Math.random()); // IMAGEDATA를 복사하여 사용
+    const selectedImages = shuffled.slice(0, numPairs);
+    setNumPairs(numPairs);
     return [...selectedImages, ...selectedImages]
       .map((card) => ({ ...card, status: false }))
       .sort(() => 0.5 - Math.random());
   };
 
-  const [cards, setCards] = useState(useMemo(getMixedCardList, []));
+  // 최초 로드 시 기본 난이도의 카드 세트 로드
+  useEffect(() => {
+    setCards(getMixedCardList(5)); // Easy 모드 기본 설정
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -31,8 +36,18 @@ function App() {
         <GlobalStyle />
         <Header
           score={score}
+          setScore={setScore}
+          setCards={setCards}
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
+          numPairs={numPairs}
+          resetGame={() => getMixedCardList(numPairs)}
+        />
+        <LevelButton
+          difficulty={difficulty}
+          setDifficulty={setDifficulty}
+          setCards={setCards}
+          getMixedCardList={getMixedCardList}
         />
         <MainPage
           cards={cards}
@@ -45,7 +60,7 @@ function App() {
           setScore={setScore}
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
-          resetGame={getMixedCardList}
+          resetGame={() => getMixedCardList(numPairs)}
         />
       </div>
     </ThemeProvider>

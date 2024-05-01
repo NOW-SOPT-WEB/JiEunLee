@@ -38,11 +38,6 @@ function MainPage({ cards, setCards, score, setScore }) {
 
   return (
     <>
-      <ButtonWrapper>
-        <EasyBtn>Easy</EasyBtn>
-        <NormalBtn>Normal</NormalBtn>
-        <HardBtn>Hard</HardBtn>
-      </ButtonWrapper>
       <Wrapper>
         <CardWrapper>
           {cards.map((card, index) => (
@@ -77,45 +72,6 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 100px;
-`;
-
-// button
-const ButtonWrapper = styled.div`
-  display: flex;
-  gap: 2vw;
-`;
-const EasyBtn = styled.button`
-  width: 10vw;
-  height: 4vh;
-  margin-top: 5vh;
-  background-color: ${({ theme }) => theme.colors.lightYellow};
-  border: none;
-  border-radius: 30px;
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.skyBlue};
-  }
-`;
-const NormalBtn = styled.button`
-  width: 10vw;
-  height: 4vh;
-  margin-top: 5vh;
-  background-color: ${({ theme }) => theme.colors.lightYellow};
-  border: none;
-  border-radius: 30px;
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.skyBlue};
-  }
-`;
-const HardBtn = styled.button`
-  width: 10vw;
-  height: 4vh;
-  margin-top: 5vh;
-  background-color: ${({ theme }) => theme.colors.lightYellow};
-  border: none;
-  border-radius: 30px;
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.skyBlue};
-  }
 `;
 
 // card

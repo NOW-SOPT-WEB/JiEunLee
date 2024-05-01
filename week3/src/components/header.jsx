@@ -1,10 +1,18 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 import { useEffect } from "react";
 
-// eslint-disable-next-line react/prop-types
-function Header({ score, modalVisible, setModalVisible }) {
+function Header({
+  score,
+  modalVisible,
+  setModalVisible,
+  numPairs,
+  resetGame,
+  setCards,
+  setScore,
+}) {
   useEffect(() => {
-    if (score === 2) {
+    if (score === numPairs) {
       toggleModal();
     }
   }, [score]);
@@ -13,11 +21,19 @@ function Header({ score, modalVisible, setModalVisible }) {
     setModalVisible(!modalVisible);
   };
 
+  const resetGamefun = () => {
+    const newCards = resetGame();
+    setCards(newCards);
+    setScore(0);
+  };
+
   return (
     <HeaderWrapper>
       <Title>빈지노 앨범 맞추기</Title>
-      <Count>{score}/5</Count>
-      <ResetBtn>RESET</ResetBtn>
+      <Count>
+        {score}/{numPairs}
+      </Count>
+      <ResetBtn onClick={resetGamefun}>RESET</ResetBtn>
     </HeaderWrapper>
   );
 }
