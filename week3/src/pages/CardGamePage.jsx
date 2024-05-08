@@ -43,20 +43,20 @@ function MainPage({ cards, setCards, score, setScore }) {
           {cards.map((card, index) => (
             <Card key={index} onClick={() => handleClick(index)}>
               {card.status ? (
-                <CardFront>
+                <CardForm>
                   <CardFrontImg
                     id={card.id}
                     src={card.imgUrl}
                     alt={card.description}
                   ></CardFrontImg>
-                </CardFront>
+                </CardForm>
               ) : (
-                <CardBack>
+                <CardForm>
                   <CardBackImg
                     src="/src/assets/images/backCard/cardBack.png"
                     alt="card's back"
                   ></CardBackImg>
-                </CardBack>
+                </CardForm>
               )}
             </Card>
           ))}
@@ -91,11 +91,7 @@ const CardFrontImg = styled.img`
   width: 12vw;
   height: 19vh;
 `;
-const CardFront = styled.div`
-  width: 12vw;
-  height: 19vh;
-`;
-const CardBack = styled.div`
+const CardForm = styled.div`
   width: 12vw;
   height: 19vh;
 `;
