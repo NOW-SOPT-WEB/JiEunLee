@@ -20,9 +20,9 @@ function LevelButton({ setCards, setDifficulty, getMixedCardList }) {
   return (
     <>
       <ButtonWrapper>
-        <EasyBtn onClick={handleEasy}>Easy</EasyBtn>
-        <NormalBtn onClick={handleNormal}>Normal</NormalBtn>
-        <HardBtn onClick={handleHard}>Hard</HardBtn>
+        <EasyButton onClick={handleEasy}>Easy</EasyButton>
+        <NormalButton onClick={handleNormal}>Normal</NormalButton>
+        <HardButton onClick={handleHard}>Hard</HardButton>
       </ButtonWrapper>
     </>
   );
@@ -36,7 +36,8 @@ const ButtonWrapper = styled.div`
   align-items: center;
   margin: 15vh 0 8vh 0;
 `;
-const EasyBtn = styled.button`
+
+const Button = styled.button`
   width: 10vw;
   height: 4vh;
   background-color: ${({ theme }) => theme.colors.lightYellow};
@@ -46,24 +47,8 @@ const EasyBtn = styled.button`
     background-color: ${({ theme }) => theme.colors.skyBlue};
   }
 `;
-const NormalBtn = styled.button`
-  width: 10vw;
-  height: 4vh;
-  background-color: ${({ theme }) => theme.colors.lightYellow};
-  border: none;
-  border-radius: 30px;
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.skyBlue};
-  }
-`;
-const HardBtn = styled.button`
-  width: 10vw;
-  height: 4vh;
-  background-color: ${({ theme }) => theme.colors.lightYellow};
-  border: none;
-  border-radius: 30px;
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.skyBlue};
-  }
-`;
+
+const EasyButton = styled(Button)``;
+const NormalButton = styled(Button)``;
+const HardButton = styled(Button)``;
 export default LevelButton;
