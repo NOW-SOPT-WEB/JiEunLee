@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 
-function MainPage({ cards, setCards, score, setScore }) {
+function MainPage({ cards, setCards, setScore }) {
   const [clicked, setClicked] = useState([]);
 
   useEffect(() => {
@@ -11,20 +11,19 @@ function MainPage({ cards, setCards, score, setScore }) {
       // 카드 짝이 맞는지 확인
       if (cards[first].id === cards[second].id) {
         // 카드 짝이 맞으면 점수 1추가
-        setScore(score + 1);
+        setScore((prevScore) => prevScore + 1);
       } else {
         // 카드가 매치되지 않는 경우 카드를 다시 뒤집기
         const newCards = cards.map((card, index) => {
-          if (index === first || index === second) {
-            return { ...card, status: false };
-          }
-          return card;
+          return index === first || index === second
+            ? { ...card, status: false }
+            : card;
         });
         setTimeout(() => setCards(newCards), 1000);
       }
       setClicked([]); // 클릭된 카드 초기화
     }
-  }, [clicked, cards, setScore]);
+  }, [clicked, cards]);
 
   const handleClick = (index) => {
     if (!cards[index].status && clicked.length < 2) {
