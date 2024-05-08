@@ -1,7 +1,12 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 
-function LevelButton({ setCards, setDifficulty, getMixedCardList }) {
+function LevelButton({
+  setCards,
+  setDifficulty,
+  difficulty,
+  getMixedCardList,
+}) {
   const handleEasy = () => {
     setCards(getMixedCardList(5));
     setDifficulty("easy");
@@ -20,9 +25,15 @@ function LevelButton({ setCards, setDifficulty, getMixedCardList }) {
   return (
     <>
       <ButtonWrapper>
-        <EasyButton onClick={handleEasy}>Easy</EasyButton>
-        <NormalButton onClick={handleNormal}>Normal</NormalButton>
-        <HardButton onClick={handleHard}>Hard</HardButton>
+        <Button onClick={handleEasy} $isSelected={"easy" === difficulty}>
+          Easy
+        </Button>
+        <Button onClick={handleNormal} $isSelected={"normal" === difficulty}>
+          Normal
+        </Button>
+        <Button onClick={handleHard} $isSelected={"hard" === difficulty}>
+          Hard
+        </Button>
       </ButtonWrapper>
     </>
   );
@@ -41,6 +52,8 @@ const Button = styled.button`
   width: 10vw;
   height: 4vh;
   background-color: ${({ theme }) => theme.colors.lightYellow};
+  background-color: ${({ $isSelected, theme }) =>
+    $isSelected ? theme.colors.lightPink : theme.colors.lightYellow};
   border: none;
   border-radius: 30px;
   &:hover {
@@ -48,7 +61,4 @@ const Button = styled.button`
   }
 `;
 
-const EasyButton = styled(Button)``;
-const NormalButton = styled(Button)``;
-const HardButton = styled(Button)``;
 export default LevelButton;
