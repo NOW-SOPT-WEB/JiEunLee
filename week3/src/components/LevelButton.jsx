@@ -7,31 +7,29 @@ function LevelButton({
   difficulty,
   getMixedCardList,
 }) {
-  const handleEasy = () => {
-    setCards(getMixedCardList(5));
-    setDifficulty("easy");
+  const handleChangeLevel = (difficulty, count) => {
+    setCards(getMixedCardList(count));
+    setDifficulty(difficulty);
   };
-
-  const handleNormal = () => {
-    setCards(getMixedCardList(7));
-    setDifficulty("normal");
-  };
-
-  const handleHard = () => {
-    setCards(getMixedCardList(9));
-    setDifficulty("hard");
-  };
-
   return (
     <>
       <ButtonWrapper>
-        <Button onClick={handleEasy} $isSelected={"easy" === difficulty}>
+        <Button
+          onClick={() => handleChangeLevel("easy", 5)}
+          $isSelected={"easy" === difficulty}
+        >
           Easy
         </Button>
-        <Button onClick={handleNormal} $isSelected={"normal" === difficulty}>
+        <Button
+          onClick={() => handleChangeLevel("normal", 7)}
+          $isSelected={"normal" === difficulty}
+        >
           Normal
         </Button>
-        <Button onClick={handleHard} $isSelected={"hard" === difficulty}>
+        <Button
+          onClick={() => handleChangeLevel("hard", 9)}
+          $isSelected={"hard" === difficulty}
+        >
           Hard
         </Button>
       </ButtonWrapper>
