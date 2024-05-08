@@ -1,3 +1,4 @@
+import { Global, css } from '@emotion/react';
 import reset from 'emotion-reset';
 
 import theme from './theme';
@@ -15,7 +16,7 @@ const globalStyle = css`
 
     font-size: 62.5%;
 
-    background-color: ${theme.colors.lightYellow}; //theme 컬러 가져오기
+    background-color: ${theme.colors.darkBeige}; //theme 컬러 가져오기
   }
 
   input {
@@ -47,5 +48,8 @@ const globalStyle = css`
     resize: none;
   }
 `;
+const GlobalStyle = () => {
+  return <Global styles={globalStyle} />;
+};
 
-export default globalStyle;
+export default GlobalStyle;
