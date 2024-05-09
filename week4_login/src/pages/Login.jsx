@@ -7,10 +7,20 @@ function Home() {
       <Form>
         <Title>Login</Title>
         <img src='../src/assets/images/login.jpeg' width={120} alt='login' />
-        <Input placeholder='아이디'></Input>
-        <Input placeholder='비밀번호'></Input>
+        <Input
+          placeholder='아이디'
+          type='text'
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+        />
+        <Input
+          placeholder='비밀번호'
+          type='password'
+          value={pw}
+          onChange={(e) => setPw(e.target.value)}
+        />
         <BtnContainer>
-          <Button>로그인</Button>
+          <Button onClick={handleLogin}>로그인</Button>
           <Button>회원가입</Button>
         </BtnContainer>
       </Form>
@@ -40,19 +50,9 @@ const Form = styled.div`
 const Title = styled.p`
   font-size: 2rem;
 `;
-const Input = styled.input`
-  width: 15rem;
-  padding: 0.5rem;
-  border: 1px solid ${({ theme }) => theme.colors.darkBeige};
-  border-radius: 10px;
-`;
+
 const BtnContainer = styled.div`
   display: flex;
   gap: 1rem;
 `;
-const Button = styled.button`
-  background-color: ${({ theme }) => theme.colors.darkPink};
-  border-radius: 10px;
-  width: 6rem;
-  height: 2rem;
 `;
