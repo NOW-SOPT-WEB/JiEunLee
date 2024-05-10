@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
 import { Link, useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
+import { memberLogin } from '../../apis/login/memberLogin';
 
 function LoginForm() {
   const [id, setId] = useState('');
@@ -12,18 +12,15 @@ function LoginForm() {
   const navigate = useNavigate();
   const [memberId, setMemberId] = useState(0);
 
-  const requestBody = {
-    authenticationId: id,
-    password: pw,
-  };
-
   /** 로그인 시도 */
   const handleLogin = async () => {
+    const requestBody = {
+      authenticationId: id,
+      password: pw,
+    };
+
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/member/login`,
-        requestBody
-      );
+      const response = await memberLogin(requestBody);
 
       const headersMemberId = response.headers['location'];
       if (headersMemberId) {

@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { Link, useNavigate } from 'react-router-dom';
 import Input from '../../components/common/Input';
 import Button from '../../components/common/Button';
+import { memberJoin } from '../../apis/join/memberJoin';
 
 function JoinForm() {
   const [id, setId] = useState('');
@@ -17,18 +18,14 @@ function JoinForm() {
   const handleSignUp = async (e) => {
     e.preventDefault();
 
-    const requestBody = {
-      authenticationId: id,
-      password: pw,
-      nickname,
-      phone,
-    };
-
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/member/join`,
-        requestBody
-      );
+      const requestBody = {
+        authenticationId: id,
+        password: pw,
+        nickname,
+        phone,
+      };
+      const response = await memberJoin(requestBody);
 
       if (response.status === 201 || response.status === 200) {
         alert('회원가입이 성공했습니다.');

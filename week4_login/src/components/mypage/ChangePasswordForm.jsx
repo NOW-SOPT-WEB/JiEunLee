@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
+import { memberPassword } from '../../apis/mypage/memberPassword';
 
 function ChangePasswordForm() {
   const [oldPassword, setOldPassword] = useState('');
@@ -26,11 +27,7 @@ function ChangePasswordForm() {
       return;
     } else {
       try {
-        const response = await axios.patch(
-          `${import.meta.env.VITE_BASE_URL}/member/password`,
-          requestBody,
-          { headers }
-        );
+        const response = await memberPassword(requestBody, { headers });
         alert(response.data.message);
         console.log('비밀번호 변경 성공:', response.data.message);
       } catch (error) {

@@ -6,6 +6,7 @@ import Button from '../components/common/Button';
 import Form from '../components/common/Form';
 import Container from '../components/common/Container';
 import ChangePasswordForm from '../components/mypage/ChangePasswordForm';
+import { memberInfo } from '../apis/mypage/memberInfo';
 
 function MyPage() {
   const [infoData, setInfoData] = useState({});
@@ -20,10 +21,7 @@ function MyPage() {
   useEffect(() => {
     const getMyInfo = async () => {
       try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_BASE_URL}/member/info`,
-          { headers }
-        );
+        const response = await memberInfo({ headers });
         setInfoData(response.data.data);
         console.log('조회 성공:', response.data.data);
       } catch (error) {
