@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Button from '../components/Button';
+import Button from '../components/common/Button';
 import { Link } from 'react-router-dom';
+import Form from '../components/common/Form';
+import Container from '../components/common/Container';
 
 function Main() {
   return (
@@ -24,24 +26,7 @@ function Main() {
     </Container>
   );
 }
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`;
 
-const Form = styled.div`
-  gap: 3rem;
-  display: flex;
-  width: 50vw;
-  height: 70vh;
-  border: 1px solid ${({ theme }) => theme.colors.white};
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.lightPink};
-`;
 const BtnContainer = styled.div`
   display: flex;
   gap: 1rem;
