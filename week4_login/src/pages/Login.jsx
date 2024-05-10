@@ -1,11 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import axios from 'axios';
+import Button from '../components/Button';
+import Input from '../components/Input';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Home() {
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+  const [message, setMessage] = useState('');
+  const [memberId, setMemberId] = useState(null);
+  const navigate = useNavigate();
+
+  const requestBody = {
+    authenticationId: id,
+    password: pw,
+  };
+
+  /** 로그인 시도 */
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/member/login`,
+        requestBody
+      );
+
+      const headersMemberId = response.headers['location'];
+      if (headersMemberId) {
+        setMemberId(headersMemberId);
+        console.log(headersMemberId);
+      }
+
+      console.log('로그인 성공:', response.data);
+      setMessage('로그인 성공');
+      // 메인페이지로 이동
+      // navigate('/main');
+      // // 멤버 아이디의 마이페이지로 이동
+      navigate(`/mypage/${headersMemberId}`);
+    } catch (error) {
+      if (error.response) {
+        setMessage(error.response.data.message);
+        alert(error.response.data.message);
+      }
+    }
+  };
+
   return (
     <Container>
       <Form>
-        <Title>Login</Title>
+        <Title>로그인</Title>
         <img src='../src/assets/images/login.jpeg' width={120} alt='login' />
         <Input
           placeholder='아이디'
@@ -21,8 +64,11 @@ function Home() {
         />
         <BtnContainer>
           <Button onClick={handleLogin}>로그인</Button>
-          <Button>회원가입</Button>
+          <Link to='/join'>
+            <Button>회원가입</Button>
+          </Link>
         </BtnContainer>
+        {message && <Message>{message}</Message>}
       </Form>
     </Container>
   );
@@ -36,11 +82,12 @@ const Container = styled.div`
   align-items: center;
   height: 100vh;
 `;
+
 const Form = styled.div`
-  gap: 2rem;
+  gap: 3rem;
   display: flex;
-  width: 30vw;
-  height: 45vh;
+  width: 50vw;
+  height: 70vh;
   border: 1px solid ${({ theme }) => theme.colors.white};
   justify-content: center;
   align-items: center;
@@ -55,4 +102,7 @@ const BtnContainer = styled.div`
   display: flex;
   gap: 1rem;
 `;
+const Message = styled.p`
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.red};
 `;
