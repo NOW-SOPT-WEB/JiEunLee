@@ -1,19 +1,16 @@
 import { ThemeProvider } from '@emotion/react';
-import './App.css';
-import { React, useState } from 'react';
-import Login from './pages/Login';
+import { React } from 'react';
 import theme from './styles/theme';
 import GlobalStyle from './styles/GlobalStyle';
-import Join from './pages/Join';
 import Router from '../Router';
-import Main from './pages/Main';
-import MyPage from './pages/MyPage';
+import Container from './components/common/Container';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router />
+      <Container />
     </ThemeProvider>
   );
 }

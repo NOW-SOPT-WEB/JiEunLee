@@ -33,26 +33,24 @@ function MyPage() {
   }, [memberId]);
 
   return (
-    <Container>
-      <Form>
-        <Title>마이페이지</Title>
-        <Label>id: {infoData.authenticationId}</Label>
-        <Label>닉네임: {infoData.nickname}</Label>
-        <Label>폰 번호: {infoData.phone}</Label>
-        <ChangePassword
-          onClick={() => {
-            setToggleChangePassword(!toggleChangePassword);
-            console.log(toggleChangePassword);
-          }}
-        >
-          비밀번호 변경
-        </ChangePassword>
-        {toggleChangePassword && <ChangePasswordForm />}
-        <Link to='/main'>
-          <Button>홈으로</Button>
-        </Link>
-      </Form>
-    </Container>
+    <Form>
+      <Title>마이페이지</Title>
+      <Label>id: {infoData.authenticationId}</Label>
+      <Label>닉네임: {infoData.nickname}</Label>
+      <Label>폰 번호: {infoData.phone}</Label>
+      <ChangePassword
+        onClick={() => {
+          setToggleChangePassword(!toggleChangePassword);
+          console.log(toggleChangePassword);
+        }}
+      >
+        비밀번호 변경
+      </ChangePassword>
+      {toggleChangePassword && <ChangePasswordForm />}
+      <Link to='/main'>
+        <Button>홈으로</Button>
+      </Link>
+    </Form>
   );
 }
 

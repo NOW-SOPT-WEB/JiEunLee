@@ -7,23 +7,17 @@ import Container from '../components/common/Container';
 
 function Main() {
   return (
-    <Container>
-      <Form>
-        <img
-          src='../src/assets/images/main.jpeg'
-          width={300}
-          alt='main image'
-        />
-        <BtnContainer>
-          <Link to='/'>
-            <Button>로그인</Button>
-          </Link>
-          <Link to='/join'>
-            <Button>회원가입</Button>
-          </Link>
-        </BtnContainer>
-      </Form>
-    </Container>
+    <Form>
+      <img src='../src/assets/images/main.jpeg' width={300} alt='main image' />
+      <BtnContainer>
+        <Link to='/'>
+          <Button>로그인</Button>
+        </Link>
+        <Link to='/join'>
+          <Button>회원가입</Button>
+        </Link>
+      </BtnContainer>
+    </Form>
   );
 }
 

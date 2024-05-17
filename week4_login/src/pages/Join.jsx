@@ -7,12 +7,10 @@ import JoinForm from '../components/join/JoinForm';
 
 function Join() {
   return (
-    <Container>
-      <Form>
-        <Title>회원가입</Title>
-        <JoinForm />
-      </Form>
-    </Container>
+    <Form>
+      <Title>회원가입</Title>
+      <JoinForm />
+    </Form>
   );
 }
 

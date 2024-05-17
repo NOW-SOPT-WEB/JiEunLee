@@ -7,13 +7,11 @@ import LoginForm from '../components/login/LoginForm';
 
 function Login() {
   return (
-    <Container>
-      <Form>
-        <Title>로그인</Title>
-        <img src='../src/assets/images/login.jpeg' width={120} alt='login' />
-        <LoginForm />
-      </Form>
-    </Container>
+    <Form>
+      <Title>로그인</Title>
+      <img src='../src/assets/images/login.jpeg' width={120} alt='login' />
+      <LoginForm />
+    </Form>
   );
 }
 

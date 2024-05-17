@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 
 const Form = styled.div`
@@ -11,6 +10,8 @@ const Form = styled.div`
   align-items: center;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.lightPink};
+  margin-left: 25%;
+  margin-top: 5%;
 `;
 
 export default Form;
