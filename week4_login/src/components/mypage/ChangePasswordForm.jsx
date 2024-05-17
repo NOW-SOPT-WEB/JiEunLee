@@ -1,6 +1,5 @@
 import { React, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
 import { memberPassword } from '../../apis/mypage/memberPassword';
@@ -26,15 +25,9 @@ function ChangePasswordForm() {
       alert('모든 비밀번호 필드를 채워주세요.');
       return;
     } else {
-      try {
-        const response = await memberPassword(requestBody, { headers });
-        alert(response.data.message);
-        console.log('비밀번호 변경 성공:', response.data.message);
-      } catch (error) {
-        if (error.response) {
-          alert(error.response.data.message);
-        }
-      }
+      const response = await memberPassword(requestBody, { headers });
+      alert(response.data.message);
+      console.log('비밀번호 변경 성공:', response.data.message);
     }
   };
   return (

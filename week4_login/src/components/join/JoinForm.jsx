@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import styled from '@emotion/styled';
 import { Link, useNavigate } from 'react-router-dom';
 import Input from '../../components/common/Input';
@@ -18,24 +17,17 @@ function JoinForm() {
   const handleSignUp = async (e) => {
     e.preventDefault();
 
-    try {
-      const requestBody = {
-        authenticationId: id,
-        password: pw,
-        nickname,
-        phone,
-      };
-      const response = await memberJoin(requestBody);
+    const requestBody = {
+      authenticationId: id,
+      password: pw,
+      nickname,
+      phone,
+    };
+    const response = await memberJoin(requestBody);
 
-      if (response.status === 201 || response.status === 200) {
-        alert('회원가입이 성공했습니다.');
-        navigate('/');
-      }
-    } catch (error) {
-      if (error.response) {
-        setMessage(error.response.data.message);
-        alert(error.response.data.message);
-      }
+    if (response.status === 201 || response.status === 200) {
+      alert('회원가입이 성공했습니다.');
+      navigate('/');
     }
   };
   return (

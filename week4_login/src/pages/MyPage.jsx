@@ -1,6 +1,5 @@
 import { React, useState, useEffect } from 'react';
 import styled from '@emotion/styled';
-import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import Button from '../components/common/Button';
 import Form from '../components/common/Form';

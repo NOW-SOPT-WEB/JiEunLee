@@ -19,24 +19,17 @@ function LoginForm() {
       password: pw,
     };
 
-    try {
-      const response = await memberLogin(requestBody);
+    const response = await memberLogin(requestBody);
 
-      const headersMemberId = response.headers['location'];
-      if (headersMemberId) {
-        setMemberId(headersMemberId);
-        console.log(headersMemberId);
-      }
-
-      console.log('로그인 성공:', response.data);
-      setMessage('로그인 성공');
-      navigate(`/mypage/${headersMemberId}`);
-    } catch (error) {
-      if (error.response) {
-        setMessage(error.response.data.message);
-        alert(error.response.data.message);
-      }
+    const headersMemberId = response.headers['location'];
+    if (headersMemberId) {
+      setMemberId(headersMemberId);
+      console.log(headersMemberId);
     }
+
+    console.log('로그인 성공:', response.data);
+    setMessage('로그인 성공');
+    navigate(`/mypage/${headersMemberId}`);
   };
   return (
     <>
@@ -62,6 +55,7 @@ function LoginForm() {
     </>
   );
 }
+
 const BtnContainer = styled.div`
   display: flex;
   gap: 1rem;
