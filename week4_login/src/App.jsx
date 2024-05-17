@@ -13,12 +13,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Router>
-        <Main />
-        <Login />
-        <MyPage />
-        <Join />
-      </Router>
+      <Router />
     </ThemeProvider>
   );
 }
