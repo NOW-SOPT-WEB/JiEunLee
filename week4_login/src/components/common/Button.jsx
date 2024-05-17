@@ -5,14 +5,12 @@ function Button(props) {
   const { children, ...rest } = props;
 
   return (
-    <Wrapper>
-      <button type='button' {...rest}>
-        {children}
-      </button>
-    </Wrapper>
+    <ButtonWrapper type='button' {...rest}>
+      {children}
+    </ButtonWrapper>
   );
 }
-const Wrapper = styled.div`
+const ButtonWrapper = styled.button`
   background-color: ${({ theme }) => theme.colors.darkPink};
   border-radius: 10px;
   width: 8rem;
