@@ -2,15 +2,7 @@
 import styled from "styled-components";
 import { useEffect } from "react";
 
-function Header({
-  score,
-  modalVisible,
-  setModalVisible,
-  numPairs,
-  resetGame,
-  setCards,
-  setScore,
-}) {
+function Header({ score, modalVisible, setModalVisible, numPairs, resetGame, setScore }) {
   useEffect(() => {
     if (score === numPairs) {
       toggleModal();
@@ -22,8 +14,7 @@ function Header({
   };
 
   const resetGamefun = () => {
-    const newCards = resetGame();
-    setCards(newCards);
+    resetGame();
     setScore(0);
   };
 
