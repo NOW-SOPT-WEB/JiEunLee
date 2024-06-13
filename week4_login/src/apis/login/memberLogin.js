@@ -13,5 +13,4 @@ export const memberLogin = async (requestBody) => {
       alert(error.response.data.message);
     }
   }
-  return response;
 };

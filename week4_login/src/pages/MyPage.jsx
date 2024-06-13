@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import { Link, useParams } from 'react-router-dom';
 import Button from '../components/common/Button';
 import Form from '../components/common/Form';
-import Container from '../components/common/Container';
 import ChangePasswordForm from '../components/mypage/ChangePasswordForm';
 import { memberInfo } from '../apis/mypage/memberInfo';
 
@@ -41,7 +40,6 @@ function MyPage() {
       <ChangePassword
         onClick={() => {
           setToggleChangePassword(!toggleChangePassword);
-          console.log(toggleChangePassword);
         }}
       >
         비밀번호 변경
