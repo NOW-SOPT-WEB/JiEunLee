@@ -20,9 +20,7 @@ function App() {
     const shuffled = [...IMAGEDATA].sort(() => 0.5 - Math.random()); // IMAGEDATA를 복사하여 사용
     const selectedImages = shuffled.slice(0, numPairs);
     setNumPairs(numPairs);
-    return [...selectedImages, ...selectedImages]
-      .map((card) => ({ ...card, status: false }))
-      .sort(() => 0.5 - Math.random());
+    return [...selectedImages, ...selectedImages].map((card) => ({ ...card, status: false })).sort(() => 0.5 - Math.random());
   };
 
   // 최초 로드 시 기본 난이도의 카드 세트 로드
@@ -30,38 +28,20 @@ function App() {
     setCards(getMixedCardList(5)); // Easy 모드 기본 설정
   }, []);
 
+  const resetGame = () => {
+    setDifficulty("easy");
+    setScore(0);
+    setCards(getMixedCardList(5));
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <div>
         <GlobalStyle />
-        <Header
-          score={score}
-          setScore={setScore}
-          setCards={setCards}
-          modalVisible={modalVisible}
-          setModalVisible={setModalVisible}
-          numPairs={numPairs}
-          resetGame={() => getMixedCardList(numPairs)}
-        />
-        <LevelButton
-          difficulty={difficulty}
-          setDifficulty={setDifficulty}
-          setCards={setCards}
-          getMixedCardList={getMixedCardList}
-        />
-        <MainPage
-          cards={cards}
-          setCards={setCards}
-          score={score}
-          setScore={setScore}
-        />
-        <Modal
-          setCards={setCards}
-          setScore={setScore}
-          modalVisible={modalVisible}
-          setModalVisible={setModalVisible}
-          resetGame={() => getMixedCardList(numPairs)}
-        />
+        <Header score={score} setScore={setScore} setCards={setCards} modalVisible={modalVisible} setModalVisible={setModalVisible} numPairs={numPairs} resetGame={resetGame} />
+        <LevelButton difficulty={difficulty} setDifficulty={setDifficulty} setCards={setCards} setScore={setScore} getMixedCardList={getMixedCardList} />
+        <MainPage cards={cards} setCards={setCards} score={score} setScore={setScore} />
+        <Modal setCards={setCards} setScore={setScore} modalVisible={modalVisible} setModalVisible={setModalVisible} resetGame={resetGame} />
       </div>
     </ThemeProvider>
   );

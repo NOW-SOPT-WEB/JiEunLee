@@ -1,19 +1,14 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 
-function Modal({
-  modalVisible,
-  setModalVisible,
-  resetGame,
-  setCards,
-  setScore,
-}) {
+function Modal({ modalVisible, setModalVisible, resetGame, setCards, setScore }) {
   const toggleModal = () => {
     if (modalVisible) {
       setModalVisible(false);
       resetGameCards();
     }
   };
+
   const resetGameCards = () => {
     const newCards = resetGame();
     setCards(newCards);
@@ -24,19 +19,18 @@ function Modal({
     <>
       {modalVisible && (
         <ModalBackground>
-          <ModalDiv>
+          <ModalOverlay onClick={toggleModal} />
+          <ModalContent>
             <Title>🎊 축하합니다 🎊</Title>
             <RegameBtn onClick={toggleModal}>게임으로 돌아가기</RegameBtn>
-          </ModalDiv>
+          </ModalContent>
         </ModalBackground>
       )}
-      ;
     </>
   );
 }
 
 // 모달
-
 const Title = styled.p`
   color: ${(props) => props.theme.colors.white};
   font-size: 2rem;
@@ -48,15 +42,23 @@ const ModalBackground = styled.div`
   left: 0;
   width: 100%;
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 `;
 
-const ModalDiv = styled.div`
-  position: fixed;
-  top: 300px;
-  left: 550px;
+const ModalOverlay = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+`;
+
+const ModalContent = styled.div`
+  z-index: 1001;
   display: flex;
-  z-index: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -66,6 +68,7 @@ const ModalDiv = styled.div`
   border: 2px solid ${({ theme }) => theme.colors.lightYellow};
   border-radius: 3rem;
 `;
+
 const RegameBtn = styled.button`
   width: 10vw;
   height: 4vh;
@@ -77,4 +80,5 @@ const RegameBtn = styled.button`
     background-color: ${({ theme }) => theme.colors.skyBlue};
   }
 `;
+
 export default Modal;
